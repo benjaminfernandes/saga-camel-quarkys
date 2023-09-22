@@ -3,8 +3,6 @@ package com.fernantech;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.camel.Header;
-
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
@@ -12,11 +10,11 @@ public class PedidoService {
     
     private Set<Long> pedidos = new HashSet<>();
     
-    public void newPedido(@Header("id") Long id) {
+    public void newPedido(Long id) {
         pedidos.add(id);
     }
 
-    public void cancelPedido(@Header("id") Long id) {
+    public void cancelPedido(Long id) {
         pedidos.remove(id);
     }
 
